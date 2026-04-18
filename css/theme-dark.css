@@ -1,0 +1,136 @@
+/* ══ SUMMIT DARK — deep forest night, electric green, premium ══ */
+
+:root {
+  --green-dark:   #4ADE80;
+  --green-mid:    #22C55E;
+  --green-light:  #86EFAC;
+  --cream:        #0C1509;
+  --sand:         #131D0E;
+  --gold:         #FBB040;
+  --text-dark:    #F0F0EE;
+  --text-mid:     #A8B5A0;
+  --text-light:   #687A5E;
+  --white:        #101908;
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.4);
+  --shadow-hover: 0 8px 40px rgba(74,222,128,0.15);
+}
+
+body { background: #0C1509; color: #F0F0EE; }
+
+/* Nav / weather */
+.site-header.scrolled .weather-widget { color: #A8B8A8; }
+.site-header.scrolled .weather-loc { color: #6B8068; }
+.site-header.scrolled .weather-divider { color: #3D5A42; }
+
+.site-header.scrolled {
+  background: rgba(13,26,18,0.97);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.5);
+}
+.site-header.scrolled .logo { color: #FFFFFF; }
+.logo span { color: #F5C518; }
+.site-header.scrolled .nav-links a { color: #A8B8A8; }
+.site-header.scrolled .nav-links a:hover { color: #4ADE80; }
+
+/* Hero — keep dark overlay, shift gradient tint */
+.hero-bg {
+  background:
+    linear-gradient(160deg, rgba(12,21,9,0.88) 0%, rgba(19,29,14,0.7) 60%, rgba(12,21,9,0.95) 100%),
+    url('../images/yarbo1.jpg') center/cover no-repeat;
+}
+.hero-eyebrow { color: #FBB040; }
+.hero h1 { color: #F0F0EE; }
+.hero-sub { color: rgba(240,240,238,0.75); }
+.btn-primary { background: #22C55E; color: #0C1509; font-weight: 700; }
+.btn-primary:hover { background: #4ADE80; }
+.btn-secondary { border-color: rgba(240,240,238,0.4); color: #F0F0EE; }
+.btn-secondary:hover { border-color: #4ADE80; color: #4ADE80; }
+
+/* About */
+.about { background: #101908; }
+.about-text h2 { color: #4ADE80; }
+.about-text p { color: #A8B8A8; }
+.about-card { background: #131D0E; border: 1px solid #1A2810; }
+.stat-number { color: #4ADE80; }
+.stat-label { color: #6B8068; }
+.about-divider { background: #1A2810; }
+
+/* Products */
+.products { background: #0C1509; }
+.products h2 { color: #F0F0EE; }
+.product-category-label { color: #6B8068; }
+.section-intro { color: #A8B8A8; }
+.product-card {
+  background: #101908;
+  border-color: #1A2810;
+}
+.product-card:hover { border-color: #22C55E; box-shadow: 0 8px 40px rgba(74,222,128,0.12); }
+.product-card h3 { color: #F0F0EE; }
+.product-tagline { color: #4ADE80; }
+.product-desc { color: #A8B8A8; }
+.product-link { color: #22C55E; }
+.product-card:hover .product-link { color: #4ADE80; }
+.product-card--featured {
+  background: #0D1E08;
+  border-color: #22C55E;
+}
+.product-badge { background: #22C55E; color: #0C1509; }
+.products-cta-note { color: #A8B8A8; }
+.products-cta-note a { color: #4ADE80; }
+
+/* Why Local */
+.why-local { background: #080F05; }
+.why-local h2 { color: #F0F0EE; }
+.section-label.light { color: #4ADE80; }
+.benefit-item {
+  background: rgba(74,222,128,0.04);
+  border-color: rgba(74,222,128,0.1);
+}
+.benefit-item:hover { background: rgba(74,222,128,0.08); }
+.benefit-item h3 { color: #F0F0EE; }
+.benefit-item p { color: #A8B8A8; }
+
+/* Contact */
+.contact { background: #101908; }
+.contact-text h2 { color: #4ADE80; }
+.contact-text > p { color: #A8B8A8; }
+.contact-item a { color: #22C55E; }
+.contact-item a:hover { color: #4ADE80; }
+.contact-form { background: #0C1509; border: 1px solid #1A2810; }
+.form-group label { color: #F0F0EE; }
+.form-group input,
+.form-group textarea {
+  background: #131D0E;
+  border-color: #1A2810;
+  color: #F0F0EE;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: #22C55E; box-shadow: 0 0 0 3px rgba(34,197,94,0.15); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #3D5A42; }
+.form-note { color: #6B8068; }
+.btn-full { background: #22C55E; color: #0C1509; font-weight: 700; }
+.btn-full:hover { background: #4ADE80; }
+
+/* Accessories page */
+.page-hero { background: #080F05; }
+.accessories-section { background: #0C1509; }
+.acc-card { background: #101908; border-color: #1A2810; }
+.acc-card:hover { border-color: #22C55E; }
+.acc-body h3 { color: #F0F0EE; }
+.acc-body p { color: #A8B5A0; }
+.acc-badge--stock   { background: #0D2B12; color: #4ADE80; }
+.acc-badge--limited { background: #2B2000; color: #FBB040; }
+.acc-badge--order   { background: #0D1A2B; color: #93C5FD; }
+.acc-disclaimer { background: #131D0E; }
+.acc-disclaimer p { color: #A8B5A0; }
+.acc-contact-link { color: #22C55E; }
+.acc-contact-link:hover { color: #4ADE80; }
+
+/* Footer */
+.site-footer { background: #080F05; }
+.footer-logo { color: #F0F0EE; }
+.footer-logo span { color: #F5C518; }
+.footer-tagline { color: rgba(240,240,238,0.4); }
+.footer-links a { color: rgba(240,240,238,0.55); }
+.footer-links a:hover { color: #4ADE80; }
+.footer-copy { color: rgba(240,240,238,0.25); }

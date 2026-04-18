@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(/Library/Developer/CommandLineTools/usr/bin/python3 -m http.server 3457)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }

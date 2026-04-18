@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#1C3D0F"/>
+
+  <!-- Left blade — shorter, leans left -->
+  <path d="M9,26 C7,20 7,14 9,9 L10,8 L11,9 C12,14 12,20 11,26 Z" fill="#5A9435"/>
+
+  <!-- Center blade — tallest, upright -->
+  <path d="M14,27 C13,20 13,13 15,5 L16,4 L17,5 C18,13 18,20 17,27 Z" fill="#8CC847"/>
+
+  <!-- Right blade — shorter, leans right -->
+  <path d="M21,26 C21,20 22,14 22,9 L23,8 L24,9 C25,14 24,20 23,26 Z" fill="#5A9435"/>
+
+  <!-- Ground strip -->
+  <rect x="5" y="25" width="22" height="4" rx="2" fill="#2D5C1F"/>
+</svg>

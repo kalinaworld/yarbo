@@ -7,8 +7,10 @@
   <title>Highland Yarbo | Robotic Mowers in the Catskills</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=DM+Serif+Display&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link id="theme-css" rel="stylesheet" href="" />
 </head>
 <body>
 
@@ -19,9 +21,20 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#products">Products</a>
+        <a href="accessories.html">Accessories</a>
         <a href="#why-local">Why Buy Local</a>
         <a href="#contact" class="btn-nav">Contact Us</a>
       </nav>
+      <div class="weather-widget" id="weather-widget" aria-live="polite">
+        <span id="weather-temp"></span>
+        <span class="weather-divider" aria-hidden="true">·</span>
+        <span id="weather-time"></span>
+        <span class="weather-loc">Yulan, NY</span>
+      </div>
+      <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -53,6 +66,7 @@
         <h2>Rooted in the Catskills</h2>
         <p>We're your neighbors — a locally owned business based in Sullivan County, New York, with deep roots in this community. When Yarbo's next-generation robotic mowers caught our attention, we knew they were exactly what Catskills homeowners needed: powerful enough for hilly, wooded terrain, smart enough to work unattended, and built to last.</p>
         <p>We became an authorized Yarbo dealer because we believe in the product, and we back every sale with honest, hands-on support you can only get from someone who lives down the road.</p>
+        <p class="about-gardens-note">Highland Yarbo is part of the <a href="https://www.monteleonegardens.com/" target="_blank" rel="noopener">Monteleone Gardens</a> family — Frank Monteleone's garden center rooted right here in the Catskills. Stop in and see us.</p>
       </div>
       <div class="about-card">
         <div class="about-stat">
@@ -80,30 +94,60 @@
       <h2 class="center">The Yarbo Lineup</h2>
       <p class="section-intro center">Yarbo builds some of the most capable robotic mowers on the market — engineered for real lawns, not just flat, tidy ones. Click any model to learn more on yarbo.com.</p>
 
+      <p class="product-category-label">&#127807; Lawn Care</p>
       <div class="product-grid">
 
-        <a href="https://www.yarbo.com/products" target="_blank" rel="noopener" class="product-card">
+        <a href="https://www.yarbo.com/products/lawn-mower-pro" target="_blank" rel="noopener" class="product-card product-card--featured">
+          <div class="product-badge">Top of Line</div>
           <div class="product-icon">&#127807;</div>
-          <h3>Yarbo G1</h3>
-          <p class="product-tagline">The all-terrain workhorse</p>
-          <p class="product-desc">Handles slopes up to 80% grade, navigates complex yard boundaries, and operates quietly day or night. Ideal for Catskills terrain.</p>
+          <h3>Yarbo Lawn Mower Pro</h3>
+          <p class="product-tagline">Maximum power &amp; precision</p>
+          <p class="product-desc">The flagship robotic mower — handles large, complex, hilly yards with RTK GPS navigation, multi-zone scheduling, and quiet operation.</p>
           <span class="product-link">View on yarbo.com &rarr;</span>
         </a>
 
-        <a href="https://www.yarbo.com/products" target="_blank" rel="noopener" class="product-card product-card--featured">
-          <div class="product-badge">Most Popular</div>
-          <div class="product-icon">&#127776;</div>
-          <h3>Yarbo S1</h3>
-          <p class="product-tagline">Smart, quiet, efficient</p>
-          <p class="product-desc">RTK GPS navigation means no perimeter wire. Precise, app-controlled mowing with scheduling, zones, and real-time monitoring.</p>
+        <a href="https://www.yarbo.com/products/lawn-mower" target="_blank" rel="noopener" class="product-card">
+          <div class="product-icon">&#127807;</div>
+          <h3>Yarbo Lawn Mower</h3>
+          <p class="product-tagline">Smart mowing, wire-free</p>
+          <p class="product-desc">RTK GPS-guided robotic mower with app control, automatic scheduling, and no boundary wire required. Ideal for most Catskills lawns.</p>
           <span class="product-link">View on yarbo.com &rarr;</span>
         </a>
 
-        <a href="https://www.yarbo.com/products" target="_blank" rel="noopener" class="product-card">
-          <div class="product-icon">&#9889;</div>
-          <h3>Yarbo Accessories</h3>
-          <p class="product-tagline">Expand your setup</p>
-          <p class="product-desc">Charging stations, spare blades, weatherproof covers, and seasonal add-ons. Everything you need to keep your Yarbo running perfectly.</p>
+        <a href="https://www.yarbo.com/products/trimmer" target="_blank" rel="noopener" class="product-card">
+          <div class="product-icon">&#9986;&#65039;</div>
+          <h3>Yarbo Trimmer</h3>
+          <p class="product-tagline">Edges, borders &amp; tight spots</p>
+          <p class="product-desc">An autonomous trimmer attachment that handles edges, fence lines, and areas the mower can't reach — a perfect pairing.</p>
+          <span class="product-link">View on yarbo.com &rarr;</span>
+        </a>
+
+      </div>
+
+      <p class="product-category-label product-category-label--row2">&#10052;&#65039; Snow &nbsp;&nbsp;&nbsp; &#127810; Leaf Blowing &nbsp;&nbsp;&nbsp; &#128663; Load Towing</p>
+      <div class="product-grid">
+
+        <a href="https://www.yarbo.com/products/snow-blower" target="_blank" rel="noopener" class="product-card">
+          <div class="product-icon">&#10052;&#65039;</div>
+          <h3>Yarbo Snow Blower</h3>
+          <p class="product-tagline">Driveways on autopilot all winter</p>
+          <p class="product-desc">The same Core robot swaps to a snow blower attachment — clears driveways and paths automatically, even overnight during a storm.</p>
+          <span class="product-link">View on yarbo.com &rarr;</span>
+        </a>
+
+        <a href="https://www.yarbo.com/products/blower" target="_blank" rel="noopener" class="product-card">
+          <div class="product-icon">&#127810;</div>
+          <h3>Yarbo Blower</h3>
+          <p class="product-tagline">Autonomous leaf clearing</p>
+          <p class="product-desc">A powerful robotic leaf blower attachment that clears leaves from lawns, paths, and driveways — no raking required.</p>
+          <span class="product-link">View on yarbo.com &rarr;</span>
+        </a>
+
+        <a href="https://www.yarbo.com/products/core" target="_blank" rel="noopener" class="product-card">
+          <div class="product-icon">&#9881;&#65039;</div>
+          <h3>Yarbo Core</h3>
+          <p class="product-tagline">The robot behind it all</p>
+          <p class="product-desc">The all-terrain robotic base that powers every Yarbo attachment. One Core, multiple tools — mow in summer, plow in winter.</p>
           <span class="product-link">View on yarbo.com &rarr;</span>
         </a>
 
