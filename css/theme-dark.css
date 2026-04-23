@@ -35,19 +35,19 @@ body { background: #0C1509; color: #F0F0EE; }
 .hero-bg {
   background:
     linear-gradient(160deg, rgba(12,21,9,0.88) 0%, rgba(19,29,14,0.7) 60%, rgba(12,21,9,0.95) 100%),
-    url('../images/yarbo1.jpg') center/cover no-repeat;
+    url('../images/YarboField2.jpg') center/cover no-repeat;
 }
 .hero-eyebrow { color: #FBB040; }
 .hero h1 { color: #F0F0EE; }
 .hero-sub { color: rgba(240,240,238,0.75); }
-.btn-primary { background: #22C55E; color: #0C1509; font-weight: 700; }
-.btn-primary:hover { background: #4ADE80; }
+.btn-primary { background: #F5C518; color: #0C1509; font-weight: 700; }
+.btn-primary:hover { background: #FACF35; }
 .btn-secondary { border-color: rgba(240,240,238,0.4); color: #F0F0EE; }
 .btn-secondary:hover { border-color: #4ADE80; color: #4ADE80; }
 
 /* About */
 .about { background: #101908; }
-.about-text h2 { color: #4ADE80; }
+.about-text h2 { color: #F5C518; }
 .about-text p { color: #A8B8A8; }
 .about-card { background: #131D0E; border: 1px solid #1A2810; }
 .stat-number { color: #4ADE80; }
@@ -108,11 +108,12 @@ body { background: #0C1509; color: #F0F0EE; }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: #3D5A42; }
 .form-note { color: #6B8068; }
-.btn-full { background: #22C55E; color: #0C1509; font-weight: 700; }
-.btn-full:hover { background: #4ADE80; }
+.btn-full { background: #F5C518; color: #0C1509; font-weight: 700; }
+.btn-full:hover { background: #FACF35; }
 
 /* Accessories page */
 .page-hero { background: #080F05; }
+.page-hero h1 { color: #F0F0EE; }
 .accessories-section { background: #0C1509; }
 .acc-card { background: #101908; border-color: #1A2810; }
 .acc-card:hover { border-color: #22C55E; }
@@ -134,3 +135,8 @@ body { background: #0C1509; color: #F0F0EE; }
 .footer-links a { color: rgba(240,240,238,0.55); }
 .footer-links a:hover { color: #4ADE80; }
 .footer-copy { color: rgba(240,240,238,0.25); }
+
+/* Mobile hero image position — show mower on right */
+@media (max-width: 680px) {
+  .hero-bg { background-position: 72% center; }
+}

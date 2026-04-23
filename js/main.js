@@ -1,5 +1,5 @@
-// Weather & clock — Yulan, NY (41.4726° N, 74.8218° W)
-const YULAN_LAT = 41.4726, YULAN_LON = -74.8218, YULAN_TZ = 'America/New_York';
+// Weather & clock — Eldred, NY (41.5001° N, 74.8673° W)
+const YULAN_LAT = 41.5001, YULAN_LON = -74.8673, YULAN_TZ = 'America/New_York';
 
 function updateClock() {
   const el = document.getElementById('weather-time');
@@ -40,24 +40,9 @@ fetchWeather();
 setInterval(updateClock, 60_000);
 setInterval(fetchWeather, 15 * 60_000);
 
-// Dark mode toggle
-const darkToggle = document.getElementById('dark-toggle');
-const themeLink = document.getElementById('theme-css');
-
-function setDark(isDark) {
-  themeLink.href = isDark ? 'css/theme-dark.css' : '';
-  document.documentElement.classList.toggle('dark', isDark);
-  localStorage.setItem('hy-dark', isDark ? '1' : '');
-}
-
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedDark = localStorage.getItem('hy-dark');
-const startDark = savedDark !== null ? savedDark === '1' : prefersDark;
-setDark(startDark);
-
-darkToggle.addEventListener('click', () => {
-  setDark(!document.documentElement.classList.contains('dark'));
-});
+// Dark mode — always on
+document.getElementById('theme-css').href = 'css/theme-dark.css';
+document.documentElement.classList.add('dark');
 
 // Sticky header style on scroll
 const header = document.getElementById('site-header');

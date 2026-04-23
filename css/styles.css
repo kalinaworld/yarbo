@@ -192,17 +192,24 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(160deg, rgba(27,67,50,0.82) 0%, rgba(45,106,79,0.65) 60%, rgba(27,67,50,0.9) 100%),
-    url('../images/yarbo1.jpg') center/cover no-repeat;
+    linear-gradient(160deg, rgba(28,61,15,0.82) 0%, rgba(45,92,31,0.62) 60%, rgba(28,61,15,0.92) 100%),
+    url('../images/YarboField2.jpg') center/cover no-repeat;
   z-index: 0;
 }
+
+/* VIDEO HERO — saved for later
+.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero-bg::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(28,61,15,0.82) 0%, rgba(45,92,31,0.62) 60%, rgba(28,61,15,0.92) 100%);
+  z-index: 1; } */
 
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 60px;
-  max-width: 720px;
+  max-width: 600px;
 }
 
 .hero-eyebrow {
@@ -228,6 +235,25 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-trust {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  z-index: 1;
+  white-space: nowrap;
+}
+.hero-trust span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
 
 .hero-scroll-hint {
   position: absolute;
@@ -328,6 +354,7 @@ img { display: block; max-width: 100%; }
   border: 1.5px solid transparent;
   border-radius: var(--radius-md);
   padding: 2rem 1.75rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -359,6 +386,16 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
   padding: 0.25rem 0.65rem;
   border-radius: 100px;
+}
+
+.product-img {
+  width: calc(100% + 3.5rem);
+  margin: -2rem -1.75rem 1.25rem;
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  flex-shrink: 0;
 }
 
 .product-icon { font-size: 2rem; margin-bottom: 0.5rem; }
@@ -737,4 +774,8 @@ img { display: block; max-width: 100%; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn-secondary { text-align: center; }
   .contact-form { padding: 1.75rem; }
+
+  .hero-bg { background-position: 72% center; }
+  .hero { align-items: flex-start; }
+  .hero-content { padding-top: 150px; }
 }
