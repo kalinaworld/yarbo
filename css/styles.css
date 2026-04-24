@@ -107,7 +107,7 @@ img { display: block; max-width: 100%; }
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 100;
+  z-index: 1000;
   padding-block: 1.1rem;
   transition: background var(--transition), box-shadow var(--transition);
 }
@@ -757,14 +757,14 @@ img { display: block; max-width: 100%; }
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
-    z-index: 99;
+    z-index: 999;
   }
   .nav-links.open a { font-size: 1.3rem; color: var(--white); }
   .nav-links.open .btn-nav {
     background: var(--white);
     color: var(--green-dark) !important;
   }
-  .nav-toggle { display: flex; z-index: 101; }
+  .nav-toggle { display: flex; z-index: 1001; }
   .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
@@ -777,5 +777,14 @@ img { display: block; max-width: 100%; }
 
   .hero-bg { background-position: 72% center; }
   .hero { align-items: flex-start; }
-  .hero-content { padding-top: 150px; }
+  .hero-content { padding-top: 150px; padding-bottom: 5rem; }
+
+  /* Trust line: switch to normal flow on mobile so it doesn't overlap content */
+  .hero-trust {
+    position: static;
+    transform: none;
+    justify-content: flex-start;
+    padding: 0 1.5rem 2.5rem;
+    gap: 1.25rem;
+  }
 }
