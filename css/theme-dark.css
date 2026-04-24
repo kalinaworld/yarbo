@@ -127,6 +127,11 @@ body { background: #0C1509; color: #F0F0EE; }
 .acc-contact-link { color: #22C55E; }
 .acc-contact-link:hover { color: #4ADE80; }
 
+/* Mobile nav overlay */
+.nav-links.open { background: #0C1509 !important; }
+.nav-links.open a { color: #F0F0EE !important; }
+.nav-links.open .btn-nav { background: #F5C518 !important; color: #0C1509 !important; }
+
 /* Footer */
 .site-footer { background: #080F05; }
 .footer-logo { color: #F0F0EE; }

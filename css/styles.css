@@ -237,16 +237,10 @@ img { display: block; max-width: 100%; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .hero-trust {
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  z-index: 1;
-  white-space: nowrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 .hero-trust span {
   font-size: 0.8rem;
@@ -779,12 +773,4 @@ img { display: block; max-width: 100%; }
   .hero { align-items: flex-start; }
   .hero-content { padding-top: 150px; padding-bottom: 5rem; }
 
-  /* Trust line: switch to normal flow on mobile so it doesn't overlap content */
-  .hero-trust {
-    position: static;
-    transform: none;
-    justify-content: flex-start;
-    padding: 0 1.5rem 2.5rem;
-    gap: 1.25rem;
-  }
 }
