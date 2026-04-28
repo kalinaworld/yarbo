@@ -37,7 +37,12 @@
       "Bash(gh repo *)",
       "mcp__d493a4f9-66c4-4fd4-90bb-40acf8a83171__create_draft",
       "Bash(/Library/Developer/CommandLineTools/usr/bin/python3 -m http.server 3457 --directory /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(gh api *)",
+      "Bash(curl -s https://kalinaworld.github.io/yarbo/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{url_effective}\" https://yarbocatskills.com)",
+      "Bash(curl -s -I https://yarbocatskills.com)",
+      "Bash(curl -s https://yarbocatskills.com)"
     ]
   }
 }
