@@ -132,6 +132,21 @@ body { background: #0C1509; color: #F0F0EE; }
 .nav-links.open a { color: #F0F0EE !important; }
 .nav-links.open .btn-nav { background: #F5C518 !important; color: #0C1509 !important; }
 
+/* Service Area */
+.service-area { background: #080F05; }
+.service-area h2 { color: #F0F0EE; }
+.service-area p { color: #A8B8A8; }
+.service-area .section-label { color: #4ADE80; }
+.county-item { background: rgba(74,222,128,0.05); border-color: rgba(74,222,128,0.12); color: #F0F0EE; }
+.county-item span { color: #6B8068; }
+
+/* Gallery */
+.gallery-section { background: #0C1509; }
+.gallery-item { background: #131D0E; }
+.gallery-cta { color: #A8B8A8; }
+.gallery-cta a { color: #22C55E; }
+.gallery-cta a:hover { color: #4ADE80; }
+
 /* Footer */
 .site-footer { background: #080F05; }
 .footer-logo { color: #F0F0EE; }
