@@ -42,7 +42,12 @@
       "Bash(curl -s https://kalinaworld.github.io/yarbo/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{url_effective}\" https://yarbocatskills.com)",
       "Bash(curl -s -I https://yarbocatskills.com)",
-      "Bash(curl -s https://yarbocatskills.com)"
+      "Bash(curl -s https://yarbocatskills.com)",
+      "Bash(xargs ls *)",
+      "Bash(convert --version)",
+      "mcp__Claude_in_Chrome__read_console_messages",
+      "Bash(git push *)",
+      "Bash(git remote *)"
     ]
   }
 }
