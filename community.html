@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet the local Yarbo owners in Sullivan County, NY — the Catskills Yarbo community. See who's running Yarbo robots in Eldred, Barryville, Narrowsburg, and Glen Spey." />
+  <title>Our Community | Yarbo Catskills — Local Owners in Sullivan County, NY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <style>
+    .community-section { background: var(--cream); }
+
+    .map-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      border: 2px solid var(--sand);
+      margin-bottom: 3rem;
+    }
+
+    #yarbo-map {
+      height: 520px;
+      width: 100%;
+    }
+
+    /* Custom marker popup */
+    .leaflet-popup-content-wrapper {
+      border-radius: 10px !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+      border: 2px solid #2D5C1F;
+      padding: 0 !important;
+    }
+    .leaflet-popup-content {
+      margin: 0 !important;
+      font-family: 'Inter', sans-serif;
+    }
+    .yarbo-popup {
+      padding: 1rem 1.1rem 0.9rem;
+      min-width: 180px;
+    }
+    .yarbo-popup-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1C3D0F;
+      margin-bottom: 0.15rem;
+    }
+    .yarbo-popup-model {
+      font-size: 0.82rem;
+      color: var(--green-mid);
+      font-weight: 600;
+      background: var(--sand);
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 20px;
+      margin-bottom: 0.35rem;
+    }
+    .yarbo-popup-town {
+      font-size: 0.8rem;
+      color: #767676;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .yarbo-popup-dealer {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #F5C518;
+      background: #1C3D0F;
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 20px;
+      margin-top: 0.35rem;
+    }
+
+    /* Owner card grid */
+    .owner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .owner-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .owner-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.25rem;
+    }
+    .owner-card-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .owner-card-model {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-mid);
+      background: var(--sand);
+      display: inline-block;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .owner-card-town {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 0.15rem;
+    }
+    .owner-card-dealer-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--green-mid);
+      display: inline-block;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .community-cta {
+      background: var(--green-mid);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .community-cta h3 {
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .community-cta p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+    .community-cta .btn-primary {
+      background: var(--gold);
+      color: var(--green-dark);
+    }
+    .community-cta .btn-primary:hover {
+      background: #e6b800;
+    }
+
+    @media (max-width: 768px) {
+      .owner-grid { grid-template-columns: repeat(2, 1fr); }
+      #yarbo-map { height: 380px; }
+    }
+    @media (max-width: 480px) {
+      .owner-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link id="theme-css" rel="stylesheet" href="" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span>Yarbo</span> Catskills</a>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="products.html">Products</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="gallery.html">In Action</a>
+        <a href="community.html" class="nav-current">Our Community</a>
+        <a href="index.html#why-local">Why Buy Local</a>
+        <a href="index.html#contact" class="btn-nav">Contact Us</a>
+      </nav>
+      <div class="weather-widget" id="weather-widget" aria-live="polite">
+        <span id="weather-temp"></span>
+        <span class="weather-divider" aria-hidden="true">·</span>
+        <span id="weather-time"></span>
+        <span class="weather-loc">Eldred, NY</span>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Sullivan County, NY</p>
+      <h1>The Local Yarbo Family</h1>
+      <p class="page-hero-sub">Six Yarbo robots are already working properties right here in the Catskills — mowing, blowing snow, and giving their owners back their weekends. Here's where they live.</p>
+    </div>
+  </section>
+
+  <!-- MAP & OWNERS -->
+  <section class="section community-section">
+    <div class="container">
+
+      <div class="map-wrap">
+        <div id="yarbo-map"></div>
+      </div>
+
+      <h2 style="color:var(--green-dark);margin-bottom:0.5rem;">Meet the Neighbors</h2>
+      <p style="color:var(--text-mid);margin-bottom:0;">Six Yarbo owners across Sullivan County — click any pin on the map to see more.</p>
+
+      <div class="owner-grid">
+
+        <div class="owner-card">
+          <div class="owner-card-icon">🤖</div>
+          <div class="owner-card-name">Frank M.</div>
+          <div class="owner-card-model">Snow Blower + Mower Pro</div>
+          <div class="owner-card-town">📍 Eldred, NY</div>
+          <div class="owner-card-dealer-badge">Local Dealer</div>
+        </div>
+
+        <div class="owner-card">
+          <div class="owner-card-icon">🤖</div>
+          <div class="owner-card-name">Eldred Owner #2</div>
+          <div class="owner-card-model">Yarbo S1</div>
+          <div class="owner-card-town">📍 Eldred, NY</div>
+        </div>
+
+        <div class="owner-card">
+          <div class="owner-card-icon">🤖</div>
+          <div class="owner-card-name">Eldred Owner #3</div>
+          <div class="owner-card-model">Yarbo S1</div>
+          <div class="owner-card-town">📍 Eldred, NY</div>
+        </div>
+
+        <div class="owner-card">
+          <div class="owner-card-icon">🤖</div>
+          <div class="owner-card-name">Barryville Owner</div>
+          <div class="owner-card-model">Yarbo S1</div>
+          <div class="owner-card-town">📍 Barryville, NY</div>
+        </div>
+
+        <div class="owner-card">
+          <div class="owner-card-icon">🤖</div>
+          <div class="owner-card-name">Narrowsburg Owner</div>
+          <div class="owner-card-model">Yarbo S1</div>
+          <div class="owner-card-town">📍 Narrowsburg, NY</div>
+        </div>
+
+        <div class="owner-card">
+          <div class="owner-card-icon">🤖</div>
+          <div class="owner-card-name">Glen Spey Owner</div>
+          <div class="owner-card-model">Yarbo S1</div>
+          <div class="owner-card-town">📍 Glen Spey, NY</div>
+        </div>
+
+      </div>
+
+      <div class="community-cta">
+        <h3>Join the Family</h3>
+        <p>Ready to add your Yarbo to the map? Reach out to Frank and get set up with your own robot this season.</p>
+        <a href="index.html#contact" class="btn-primary">Contact Frank</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-logo"><span>Yarbo</span> Catskills</p>
+      <p class="footer-tagline">Authorized Yarbo dealer &mdash; Sullivan, Orange &amp; Ulster Counties, NY</p>
+      <nav class="footer-links">
+        <a href="index.html#about">About</a>
+        <a href="products.html">Products</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="gallery.html">In Action</a>
+        <a href="community.html">Our Community</a>
+        <a href="index.html#why-local">Why Local</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://www.yarbo.com" target="_blank" rel="noopener">yarbo.com</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Yarbo Catskills. All rights reserved. Not affiliated with Yarbo Inc. beyond authorized dealer status.</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Sullivan County center
+    const map = L.map('yarbo-map', {
+      center: [41.54, -74.87],
+      zoom: 11,
+      scrollWheelZoom: false
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Custom Yarbo marker icon
+    function makeIcon(isDealerOptions) {
+      return L.divIcon({
+        className: '',
+        html: `<div style="
+          background: ${isDealerOptions ? '#F5C518' : '#2D5C1F'};
+          border: 3px solid ${isDealerOptions ? '#1C3D0F' : '#fff'};
+          border-radius: 50% 50% 50% 0;
+          width: 32px; height: 32px;
+          transform: rotate(-45deg);
+          box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+          display:flex; align-items:center; justify-content:center;
+        "><span style="transform:rotate(45deg);font-size:14px;line-height:1;">🤖</span></div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -36]
+      });
+    }
+
+    const owners = [
+      {
+        lat: 41.503, lon: -74.865,
+        name: 'Frank M.',
+        model: 'Snow Blower + Mower Pro',
+        town: 'Eldred, NY',
+        isDealer: true
+      },
+      {
+        lat: 41.508, lon: -74.870,
+        name: 'Eldred Owner #2',
+        model: 'Yarbo S1',
+        town: 'Eldred, NY',
+        isDealer: false
+      },
+      {
+        lat: 41.499, lon: -74.858,
+        name: 'Eldred Owner #3',
+        model: 'Yarbo S1',
+        town: 'Eldred, NY',
+        isDealer: false
+      },
+      {
+        lat: 41.493, lon: -74.900,
+        name: 'Barryville Owner',
+        model: 'Yarbo S1',
+        town: 'Barryville, NY',
+        isDealer: false
+      },
+      {
+        lat: 41.597, lon: -74.997,
+        name: 'Narrowsburg Owner',
+        model: 'Yarbo S1',
+        town: 'Narrowsburg, NY',
+        isDealer: false
+      },
+      {
+        lat: 41.477, lon: -74.779,
+        name: 'Glen Spey Owner',
+        model: 'Yarbo S1',
+        town: 'Glen Spey, NY',
+        isDealer: false
+      }
+    ];
+
+    owners.forEach(o => {
+      const marker = L.marker([o.lat, o.lon], { icon: makeIcon(o.isDealer) }).addTo(map);
+      marker.bindPopup(`
+        <div class="yarbo-popup">
+          <div class="yarbo-popup-name">${o.name}</div>
+          <div class="yarbo-popup-model">${o.model}</div>
+          <div class="yarbo-popup-town">📍 ${o.town}</div>
+          ${o.isDealer ? '<div class="yarbo-popup-dealer">⭐ Local Dealer</div>' : ''}
+        </div>
+      `);
+    });
+  </script>
+</body>
+</html>

@@ -3,15 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yarbo accessories and parts available locally through Yarbo Catskills — serving Sullivan, Orange, and Ulster Counties, NY. Blades, antenna mounts, track grease, and more." />
+  <meta name="description" content="Yarbo accessories and parts available locally through Yarbo Catskills — serving Sullivan, Orange, and Ulster Counties, NY. Blades, antenna mounts, track grease, batteries, and more." />
   <meta name="keywords" content="Yarbo accessories, Yarbo parts Sullivan County, robotic mower parts Catskills, Yarbo blades, RTK antenna mount, Yarbo dealer Hudson Valley" />
   <title>Accessories &amp; Parts | Yarbo Catskills — Sullivan, Orange &amp; Ulster County NY</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=DM+Serif+Display&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
   <link id="theme-css" rel="stylesheet" href="" />
+  <style>
+    /* ── Shop grid ─────────────────────────────────────── */
+    .shop-section { background: var(--cream); }
+
+    .shop-category {
+      margin-bottom: 3rem;
+    }
+    .shop-category-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      border-bottom: 2px solid var(--sand);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .shop-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.1rem 1.1rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .shop-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .shop-card-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .shop-card-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.35;
+      flex: 1;
+    }
+    .shop-card-price {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-mid);
+    }
+    .shop-card-btn {
+      display: block;
+      text-align: center;
+      background: var(--green-mid);
+      color: var(--white) !important;
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background var(--transition), transform var(--transition);
+      text-decoration: none;
+      margin-top: auto;
+    }
+    .shop-card-btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .shop-note {
+      background: var(--sand);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .shop-note-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+    @media (max-width: 900px) {
+      .shop-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .shop-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 400px) {
+      .shop-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,6 +125,7 @@
         <a href="products.html">Products</a>
         <a href="accessories.html" class="nav-current">Accessories</a>
         <a href="gallery.html">In Action</a>
+        <a href="community.html">Our Community</a>
         <a href="index.html#why-local">Why Buy Local</a>
         <a href="index.html#contact" class="btn-nav">Contact Us</a>
       </nav>
@@ -42,60 +144,229 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <p class="section-label">In Stock Locally</p>
+      <p class="section-label">Available Locally &amp; Online</p>
       <h1>Accessories &amp; Parts</h1>
-      <p class="page-hero-sub">We keep a curated selection of genuine Yarbo accessories on hand so you're never waiting on a shipment. If you need it, we might have it. If we don't, we'll get it for you. Fast!</p>
+      <p class="page-hero-sub">Genuine Yarbo accessories available through Monteleone Gardens. Order online and pick up locally, or have it shipped straight to you.</p>
     </div>
   </section>
 
-  <!-- ACCESSORIES -->
-  <section class="section accessories-section">
+  <!-- SHOP -->
+  <section class="section shop-section">
     <div class="container">
 
-      <div class="acc-grid">
+      <!-- Connectivity & Antennas -->
+      <div class="shop-category">
+        <p class="shop-category-title">Connectivity &amp; Antennas</p>
+        <div class="shop-grid">
 
-        <div class="acc-card">
-          <div class="acc-icon">&#9000;&#65039;</div>
-          <div class="acc-body">
-            <h3>Cutting Discs &amp; Straight Blades</h3>
-            <p>Genuine Yarbo cutting discs and straight blades. Keep spares on hand for quick swaps during the season.</p>
+          <div class="shop-card">
+            <div class="shop-card-icon">📡</div>
+            <div class="shop-card-name">High RTK Antenna Mount</div>
+            <div class="shop-card-price">$26.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
           </div>
-        </div>
 
-        <div class="acc-card">
-          <div class="acc-icon">&#128225;</div>
-          <div class="acc-body">
-            <h3>High RTK Antenna Mount</h3>
-            <p>Elevated mount for the RTK antenna — improves GPS signal quality on properties with obstructions or dense tree cover.</p>
+          <div class="shop-card">
+            <div class="shop-card-icon">📡</div>
+            <div class="shop-card-name">HaLow Antenna for Rover</div>
+            <div class="shop-card-price">$22.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
           </div>
-        </div>
 
-        <div class="acc-card">
-          <div class="acc-icon">&#128295;</div>
-          <div class="acc-body">
-            <h3>Track Grease</h3>
-            <p>Manufacturer-recommended grease for Yarbo track maintenance. Keeps the drive system running smoothly through the seasons.</p>
+          <div class="shop-card">
+            <div class="shop-card-icon">📡</div>
+            <div class="shop-card-name">HaLow Antenna for Data Center</div>
+            <div class="shop-card-price">$22.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
           </div>
-        </div>
 
-        <div class="acc-card">
-          <div class="acc-icon">&#128085;</div>
-          <div class="acc-body">
-            <h3>Yarbo T-Shirts</h3>
-            <p>Official Yarbo tees. Because why not.</p>
+          <div class="shop-card">
+            <div class="shop-card-icon">📶</div>
+            <div class="shop-card-name">Bluetooth Antenna for Data Center</div>
+            <div class="shop-card-price">$22.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
           </div>
-        </div>
 
-        <div class="acc-card">
-          <div class="acc-icon">&#129506;</div>
-          <div class="acc-body">
-            <h3>Yarbo Cap</h3>
-            <p>Official Yarbo cap. Great for mowing season and beyond.</p>
+          <div class="shop-card">
+            <div class="shop-card-icon">📡</div>
+            <div class="shop-card-name">RTK Antenna for Data Center &amp; Rover</div>
+            <div class="shop-card-price">$30.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
           </div>
-        </div>
 
+          <div class="shop-card">
+            <div class="shop-card-icon">🔌</div>
+            <div class="shop-card-name">POE Power Adapter</div>
+            <div class="shop-card-price">$32.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🖥️</div>
+            <div class="shop-card-name">Data Center</div>
+            <div class="shop-card-price">$219.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+        </div>
       </div>
 
+      <!-- Power & Charging -->
+      <div class="shop-category">
+        <p class="shop-category-title">Power &amp; Charging</p>
+        <div class="shop-grid">
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔋</div>
+            <div class="shop-card-name">Yarbo Battery</div>
+            <div class="shop-card-price">$1,199.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔌</div>
+            <div class="shop-card-name">Wired Charger</div>
+            <div class="shop-card-price">$99.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔌</div>
+            <div class="shop-card-name">Yarbo Battery Cord</div>
+            <div class="shop-card-price">$59.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🏠</div>
+            <div class="shop-card-name">Docking Station</div>
+            <div class="shop-card-price">$899.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tracks & Drive -->
+      <div class="shop-category">
+        <p class="shop-category-title">Tracks &amp; Drive</p>
+        <div class="shop-grid">
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔩</div>
+            <div class="shop-card-name">Snow Track</div>
+            <div class="shop-card-price">$189.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔩</div>
+            <div class="shop-card-name">Lawn Track</div>
+            <div class="shop-card-price">$139.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔧</div>
+            <div class="shop-card-name">Anti-Slip Studs for Rubber Track (100 Pcs)</div>
+            <div class="shop-card-price">$29.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🧴</div>
+            <div class="shop-card-name">Yarbo Track Grease (200ml)</div>
+            <div class="shop-card-price">$46.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mowing Blades & Parts -->
+      <div class="shop-category">
+        <p class="shop-category-title">Mowing Blades &amp; Parts</p>
+        <div class="shop-grid">
+
+          <div class="shop-card">
+            <div class="shop-card-icon">⚙️</div>
+            <div class="shop-card-name">Cutting Blades &amp; Bolts (40 Pcs)</div>
+            <div class="shop-card-price">$36.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">⚙️</div>
+            <div class="shop-card-name">Cutting Disc &amp; Bolts</div>
+            <div class="shop-card-price">$29.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Snow Attachments & Towing -->
+      <div class="shop-category">
+        <p class="shop-category-title">Snow Attachments &amp; Towing</p>
+        <div class="shop-grid">
+
+          <div class="shop-card">
+            <div class="shop-card-icon">❄️</div>
+            <div class="shop-card-name">Snow Shovel</div>
+            <div class="shop-card-price">$29.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🏔️</div>
+            <div class="shop-card-name">Plow Blade (Snow Blower compatible only)</div>
+            <div class="shop-card-price">$159.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔧</div>
+            <div class="shop-card-name">Scraper Bar</div>
+            <div class="shop-card-price">$59.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🔩</div>
+            <div class="shop-card-name">Shear Pins &amp; Cotter Pins Set (8 Sets)</div>
+            <div class="shop-card-price">$29.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🚜</div>
+            <div class="shop-card-name">Tow Hitch</div>
+            <div class="shop-card-price">$69.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Covers & Protection -->
+      <div class="shop-category">
+        <p class="shop-category-title">Covers &amp; Protection</p>
+        <div class="shop-grid">
+
+          <div class="shop-card">
+            <div class="shop-card-icon">🛡️</div>
+            <div class="shop-card-name">Yarbo Core Cover</div>
+            <div class="shop-card-price">$39.00</div>
+            <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" class="shop-card-btn">Purchase Here</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="shop-note">
+        <span class="shop-note-icon">ℹ️</span>
+        <p>All parts are genuine Yarbo accessories sold through <a href="https://www.monteleonegardens.com/yarbo-1" target="_blank" rel="noopener" style="color:var(--green-mid);font-weight:600;">Monteleone Gardens HydroFarm</a>. Questions about compatibility or which part you need? <a href="index.html#contact" style="color:var(--green-mid);font-weight:600;">Contact Frank directly</a> — he'll point you to exactly the right item.</p>
+      </div>
 
     </div>
   </section>
@@ -110,6 +381,7 @@
         <a href="products.html">Products</a>
         <a href="accessories.html">Accessories</a>
         <a href="gallery.html">In Action</a>
+        <a href="community.html">Our Community</a>
         <a href="index.html#why-local">Why Local</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://www.yarbo.com" target="_blank" rel="noopener">yarbo.com</a>

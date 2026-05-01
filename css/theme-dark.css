@@ -147,6 +147,28 @@ body { background: #0C1509; color: #F0F0EE; }
 .gallery-cta a { color: #22C55E; }
 .gallery-cta a:hover { color: #4ADE80; }
 
+/* Community page */
+.shop-section { background: #0C1509; }
+.shop-card { background: #101908; border-color: #1A2810; }
+.shop-card:hover { border-color: #22C55E; }
+.shop-card-name { color: #F0F0EE; }
+.shop-card-price { color: #4ADE80; }
+.shop-card-btn { background: #1C3D0F; color: #F0F0EE !important; }
+.shop-card-btn:hover { background: #2D5C1F; }
+.shop-note { background: #131D0E; color: #A8B5A0; }
+
+.owner-card { background: #101908; border-color: #1A2810; }
+.owner-card-name { color: #F0F0EE; }
+.owner-card-model { background: #0D2B12; color: #4ADE80; }
+.owner-card-town { color: #6B8068; }
+.owner-card-dealer-badge { background: #1C3D0F; color: #F5C518; }
+
+.community-cta { background: #101908; border: 1px solid #1A2810; }
+.community-cta h3 { color: #F0F0EE; }
+.community-cta p { color: #A8B8A8; }
+.community-cta .btn-primary { background: #F5C518; color: #0C1509; }
+.community-cta .btn-primary:hover { background: #FACF35; }
+
 /* Footer */
 .site-footer { background: #080F05; }
 .footer-logo { color: #F0F0EE; }

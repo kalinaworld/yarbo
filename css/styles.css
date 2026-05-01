@@ -138,12 +138,13 @@ img { display: block; max-width: 100%; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   font-weight: 500;
+  white-space: nowrap;
   color: rgba(255,255,255,0.9);
   transition: color var(--transition);
 }
@@ -647,10 +648,10 @@ img { display: block; max-width: 100%; }
 
 /* ── Nav current page ─────────────────────────────────── */
 .nav-current {
-  color: var(--green-light) !important;
+  color: var(--white) !important;
   font-weight: 600;
 }
-.site-header.scrolled .nav-current { color: var(--green-mid) !important; }
+.site-header.scrolled .nav-current { color: var(--green-dark) !important; }
 
 /* ── Accessories Page ─────────────────────────────────── */
 .accessories-section { background: var(--cream); }

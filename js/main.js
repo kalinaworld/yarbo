@@ -71,22 +71,42 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Contact form — simple client-side handling (wire to backend/Formspree later)
+// Contact form — sends to Frank via Formsubmit.co (no backend needed)
 const form = document.getElementById('contact-form');
-form.addEventListener('submit', e => {
+if (form) form.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
-  const name = form.querySelector('#name').value.trim();
+  const name    = form.querySelector('#name').value.trim();
+  const email   = form.querySelector('#email').value.trim();
+  const phone   = form.querySelector('#phone').value.trim();
+  const message = form.querySelector('#message').value.trim();
 
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Simulated submission delay — replace with fetch() to a real endpoint
-  setTimeout(() => {
-    btn.textContent = `Thanks, ${name || 'friend'}! We'll be in touch soon.`;
-    btn.style.background = '#52B788';
-    form.querySelectorAll('input, textarea').forEach(el => el.value = '');
-  }, 900);
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/monte1@hvc.rr.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name, email, phone, message,
+        _subject: `New Yarbo Catskills inquiry from ${name || 'website visitor'}`,
+        _captcha: 'false'
+      })
+    });
+    const data = await res.json();
+    if (data.success === 'true' || data.success === true) {
+      btn.textContent = `Thanks, ${name || 'friend'}! We'll be in touch soon.`;
+      btn.style.background = '#52B788';
+      form.querySelectorAll('input, textarea').forEach(el => el.value = '');
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch {
+    btn.textContent = 'Something went wrong — please email frank@yarbocatskills.com';
+    btn.style.background = '#c0392b';
+    btn.disabled = false;
+  }
 });
 
 // Subtle fade-in on scroll for sections
