@@ -79,7 +79,8 @@ body { background: #0C1509; color: #F0F0EE; }
 }
 .product-badge { background: #4D7A35; color: #F0F0EE; }
 .products-cta-note { color: #A8B8A8; }
-.products-cta-note a { color: #6B9955; }
+.products-cta-note a { color: #A8B8A8 !important; border-bottom-color: #4D7A35 !important; }
+.products-cta-note a:hover { color: #F0F0EE !important; }
 
 /* Why Local */
 .why-local { background: #080F05; }

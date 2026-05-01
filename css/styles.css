@@ -864,3 +864,194 @@ img { display: block; max-width: 100%; }
   .hero-content { padding-top: 150px; padding-bottom: 5rem; }
 
 }
+/* ══ SUMMIT DARK — deep forest night, muted forest green, premium ══ */
+
+:root {
+  --green-dark:   #6B9955;
+  --green-mid:    #4D7A35;
+  --green-light:  #8BB870;
+  --cream:        #0C1509;
+  --sand:         #131D0E;
+  --gold:         #FBB040;
+  --text-dark:    #F0F0EE;
+  --text-mid:     #A8B5A0;
+  --text-light:   #687A5E;
+  --white:        #101908;
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.4);
+  --shadow-hover: 0 8px 40px rgba(0,0,0,0.3);
+}
+
+body { background: #0C1509; color: #F0F0EE; }
+
+/* Nav / weather */
+.site-header.scrolled .weather-widget { color: #A8B8A8; }
+.site-header.scrolled .weather-loc { color: #6B8068; }
+.site-header.scrolled .weather-divider { color: #3D5A42; }
+
+.site-header.scrolled {
+  background: rgba(13,26,18,0.97);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.5);
+}
+.site-header.scrolled .logo { color: #FFFFFF; }
+.logo span { color: #F5C518; }
+.site-header.scrolled .nav-links a { color: #A8B8A8; }
+.site-header.scrolled .nav-links a:hover { color: #F0F0EE; }
+
+/* Active nav page — readable on both scrolled and hero states */
+.nav-current { color: #F0F0EE !important; }
+.site-header.scrolled .nav-current { color: #F0F0EE !important; }
+
+/* Hero — keep dark overlay, shift gradient tint */
+.hero-bg {
+  background:
+    linear-gradient(160deg, rgba(12,21,9,0.88) 0%, rgba(19,29,14,0.7) 60%, rgba(12,21,9,0.95) 100%),
+    url('../images/YarboField2.jpg') center/cover no-repeat;
+}
+.hero-eyebrow { color: #FBB040; }
+.hero h1 { color: #F0F0EE; }
+.hero-sub { color: rgba(240,240,238,0.75); }
+.btn-primary { background: #F5C518; color: #0C1509; font-weight: 700; }
+.btn-primary:hover { background: #FACF35; }
+.btn-secondary { border-color: rgba(240,240,238,0.4); color: #F0F0EE; }
+.btn-secondary:hover { border-color: #6B9955; color: #6B9955; }
+
+/* About */
+.about { background: #101908; }
+.about-text h2 { color: #F5C518; }
+.about-text p { color: #A8B8A8; }
+.about-card { background: #131D0E; border: 1px solid #1A2810; }
+.stat-number { color: #6B9955; }
+.stat-label { color: #6B8068; }
+.about-divider { background: #1A2810; }
+
+/* Products */
+.products { background: #0C1509; }
+.products h2 { color: #F0F0EE; }
+.product-category-label { color: #6B8068; }
+.section-intro { color: #A8B8A8; }
+.product-card {
+  background: #101908;
+  border-color: #1A2810;
+}
+.product-card:hover { border-color: #4D7A35; box-shadow: 0 8px 40px rgba(0,0,0,0.25); }
+.product-card h3 { color: #F0F0EE; }
+.product-tagline { color: #6B9955; }
+.product-desc { color: #A8B8A8; }
+.product-link { color: #6B9955; }
+.product-card:hover .product-link { color: #8BB870; }
+.product-card--featured {
+  background: #0D1E08;
+  border-color: #4D7A35;
+}
+.product-badge { background: #4D7A35; color: #F0F0EE; }
+.products-cta-note { color: #A8B8A8; }
+.products-cta-note a { color: #A8B8A8 !important; border-bottom-color: #4D7A35 !important; }
+.products-cta-note a:hover { color: #F0F0EE !important; }
+
+/* Why Local */
+.why-local { background: #080F05; }
+.why-local h2 { color: #F0F0EE; }
+.section-label.light { color: #6B9955; }
+.benefit-item {
+  background: rgba(107,153,85,0.05);
+  border-color: rgba(107,153,85,0.12);
+}
+.benefit-item:hover { background: rgba(107,153,85,0.09); }
+.benefit-item h3 { color: #F0F0EE; }
+.benefit-item p { color: #A8B8A8; }
+
+/* Contact */
+.contact { background: #101908; }
+.contact-text h2 { color: #6B9955; }
+.contact-text > p { color: #A8B8A8; }
+.contact-item a { color: #6B9955; }
+.contact-item a:hover { color: #8BB870; }
+.contact-form { background: #0C1509; border: 1px solid #1A2810; }
+.form-group label { color: #F0F0EE; }
+.form-group input,
+.form-group textarea {
+  background: #131D0E;
+  border-color: #1A2810;
+  color: #F0F0EE;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: #4D7A35; box-shadow: 0 0 0 3px rgba(77,122,53,0.2); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #3D5A42; }
+.form-note { color: #6B8068; }
+.btn-full { background: #F5C518; color: #0C1509; font-weight: 700; }
+.btn-full:hover { background: #FACF35; }
+
+/* Accessories (old card layout) */
+.page-hero { background: #080F05; }
+.page-hero h1 { color: #F0F0EE; }
+.accessories-section { background: #0C1509; }
+.acc-card { background: #101908; border-color: #1A2810; }
+.acc-card:hover { border-color: #4D7A35; }
+.acc-body h3 { color: #F0F0EE; }
+.acc-body p { color: #A8B5A0; }
+.acc-badge--stock   { background: #0D2B12; color: #6B9955; }
+.acc-badge--limited { background: #2B2000; color: #FBB040; }
+.acc-badge--order   { background: #0D1A2B; color: #93C5FD; }
+.acc-disclaimer { background: #131D0E; }
+.acc-disclaimer p { color: #A8B5A0; }
+.acc-contact-link { color: #6B9955; }
+.acc-contact-link:hover { color: #8BB870; }
+
+/* Shop grid (Accessories page) */
+.shop-section { background: #0C1509; }
+.shop-category-title { color: #6B8068 !important; border-bottom-color: #1A2810 !important; }
+.shop-card { background: #101908; border-color: #1A2810; }
+.shop-card:hover { border-color: #4D7A35; }
+.shop-card-name { color: #F0F0EE !important; }
+.shop-card-price { color: #F0F0EE !important; }
+.shop-card-btn { background: #2D5C1F !important; color: #F0F0EE !important; }
+.shop-card-btn:hover { background: #3A7025 !important; }
+.shop-note { background: #131D0E; color: #A8B5A0; }
+
+/* Mobile nav overlay */
+.nav-links.open { background: #0C1509 !important; }
+.nav-links.open a { color: #F0F0EE !important; }
+.nav-links.open .btn-nav { background: #F5C518 !important; color: #0C1509 !important; }
+
+/* Service Area */
+.service-area { background: #080F05; }
+.service-area h2 { color: #F0F0EE; }
+.service-area p { color: #A8B8A8; }
+.service-area .section-label { color: #6B9955; }
+.county-item { background: rgba(107,153,85,0.05); border-color: rgba(107,153,85,0.12); color: #F0F0EE; }
+.county-item span { color: #6B8068; }
+
+/* Gallery */
+.gallery-section { background: #0C1509; }
+.gallery-item { background: #131D0E; }
+.gallery-cta { color: #A8B8A8; }
+.gallery-cta a { color: #6B9955; }
+.gallery-cta a:hover { color: #8BB870; }
+
+/* Community page */
+.owner-card { background: #101908; border-color: #1A2810; }
+.owner-card-name { color: #F0F0EE !important; }
+.owner-card-model { background: #131D0E !important; color: #6B9955 !important; }
+.owner-card-town { color: #6B8068 !important; }
+.owner-card-dealer-badge { background: #2D5C1F !important; color: #F5C518 !important; }
+
+.community-cta { background: #101908 !important; border: 1px solid #1A2810; }
+.community-cta h3 { color: #F0F0EE !important; }
+.community-cta p { color: #A8B8A8 !important; }
+.community-cta .btn-primary { background: #F5C518 !important; color: #0C1509 !important; }
+.community-cta .btn-primary:hover { background: #FACF35 !important; }
+
+/* Footer */
+.site-footer { background: #080F05; }
+.footer-logo { color: #F0F0EE; }
+.footer-logo span { color: #F5C518; }
+.footer-tagline { color: rgba(240,240,238,0.4); }
+.footer-links a { color: rgba(240,240,238,0.55); }
+.footer-links a:hover { color: #F0F0EE; }
+.footer-copy { color: rgba(240,240,238,0.25); }
+
+/* Mobile hero image position — show mower on right */
+@media (max-width: 680px) {
+  .hero-bg { background-position: 72% center; }
+}

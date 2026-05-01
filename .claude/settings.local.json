@@ -49,7 +49,9 @@
       "Bash(git push *)",
       "Bash(git remote *)",
       "Bash(sed -i '' 's|>Our Community</a>|>Community</a>|g' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)",
-      "Bash(sed -i '' 's|>Why Buy Local</a>|>Why Local</a>|g' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)"
+      "Bash(sed -i '' 's|>Why Buy Local</a>|>Why Local</a>|g' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)",
+      "Bash(sed -i '' 's|  <link id=\"theme-css\" rel=\"stylesheet\" href=\"\" />\\\\n||g' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)",
+      "Bash(sed -i '' '/<link id=\"theme-css\"/d' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)"
     ]
   }
 }

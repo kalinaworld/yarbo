@@ -40,10 +40,6 @@ fetchWeather();
 setInterval(updateClock, 60_000);
 setInterval(fetchWeather, 15 * 60_000);
 
-// Dark mode — always on
-document.getElementById('theme-css').href = 'css/theme-dark.css';
-document.documentElement.classList.add('dark');
-
 // Sticky header style on scroll
 const header = document.getElementById('site-header');
 const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
