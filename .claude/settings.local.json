@@ -47,7 +47,9 @@
       "Bash(convert --version)",
       "mcp__Claude_in_Chrome__read_console_messages",
       "Bash(git push *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(sed -i '' 's|>Our Community</a>|>Community</a>|g' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)",
+      "Bash(sed -i '' 's|>Why Buy Local</a>|>Why Local</a>|g' /Users/noahkalina/Library/CloudStorage/Dropbox/Client2026/Yarbo/__TRACKED_VAR__)"
     ]
   }
 }

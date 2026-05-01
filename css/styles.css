@@ -630,7 +630,7 @@ img { display: block; max-width: 100%; }
 /* ── Inner Page Hero ──────────────────────────────────── */
 .page-hero {
   background: var(--green-dark);
-  padding: 7rem 0 4rem;
+  padding: 7rem 0 2rem;
   text-align: center;
 }
 .page-hero .section-label { color: var(--green-light); }
