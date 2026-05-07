@@ -21,7 +21,7 @@
   --section-gap:  100px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
