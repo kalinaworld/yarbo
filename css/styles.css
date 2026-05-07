@@ -349,7 +349,7 @@ img { display: block; max-width: 100%; }
   margin-right: auto;
 }
 .product-grid--four {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .product-card {
@@ -376,6 +376,11 @@ img { display: block; max-width: 100%; }
 .product-card--featured {
   border-color: var(--green-mid);
   background: linear-gradient(160deg, #f0faf4 0%, var(--white) 100%);
+}
+
+.product-card--new .product-badge {
+  background: #F5C518;
+  color: #1a1a1a;
 }
 
 .product-badge {
