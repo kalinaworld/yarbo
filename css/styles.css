@@ -2,16 +2,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green-dark:   #1C3D0F;
-  --green-mid:    #2D5C1F;
-  --green-light:  #5A9435;
-  --cream:        #FDFCF8;
-  --sand:         #F0EBE1;
-  --gold:         #F5C518;
-  --text-dark:    #1A1A1A;
-  --text-mid:     #4A4A4A;
-  --text-light:   #767676;
-  --white:        #FFFFFF;
+  --green-dark:   #6B9955;
+  --green-mid:    #4D7A35;
+  --green-light:  #8BB870;
+  --cream:        #0C1509;
+  --sand:         #131D0E;
+  --gold:         #FBB040;
+  --text-dark:    #F0F0EE;
+  --text-mid:     #A8B5A0;
+  --text-light:   #687A5E;
+  --white:        #101908;
   --radius-sm:    6px;
   --radius-md:    12px;
   --radius-lg:    20px;
@@ -28,7 +28,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-dark);
-  background: var(--cream);
+  background: #0C1509;
   -webkit-font-smoothing: antialiased;
 }
 
