@@ -62,6 +62,7 @@
       </div>
       <div class="hero-trust">
         <span>&#10003; Local Dealer</span>
+        <span>&#10003; Authorized Repair Provider</span>
         <span>&#10003; Real Property Testing</span>
         <span>&#10003; Serving Sullivan, Orange &amp; Ulster Counties</span>
       </div>
@@ -81,6 +82,13 @@
         <p>When he came across Yarbo, he didn't just see a product to sell. He saw a piece of equipment that could genuinely help people up here, on the kinds of properties, slopes, and winters that most robotic mowers aren't built for. He tested it himself first, across local terrain and through real Catskills weather, before he ever offered it to anyone else.</p>
         <p>If you buy through Frank, you're getting someone who has already put the machine through its paces. He'll tell you what it can handle, what it can't, and exactly how to set it up for your property.</p>
         <p class="about-gardens-note">Frank serves the <a href="https://townofhighlandny.gov/" target="_blank" rel="noopener">Town of Highland</a> in a leadership role and has been part of this community his whole life.</p>
+        <button class="repair-cert" id="cert-trigger" aria-label="View authorization certificate">
+          <div class="repair-cert-icon">&#128295;</div>
+          <div class="repair-cert-text">
+            <strong>Yarbo Authorized Repair Provider</strong>
+            <span>Certified to diagnose and service Yarbo equipment — not just sell it.</span>
+          </div>
+        </button>
       </div>
     </div>
   </section>
@@ -213,6 +221,24 @@
     ],
     "sameAs": ["https://www.yarbo.com"]
   }
+  </script>
+
+  <!-- Certificate modal -->
+  <div id="cert-modal" class="cert-modal" role="dialog" aria-modal="true" aria-label="Authorization certificate">
+    <div class="cert-modal-backdrop"></div>
+    <img src="images/authorizedrepair.png" alt="Yarbo Authorized Repair Provider certificate for Monteleone Gardens" class="cert-modal-img" />
+  </div>
+
+  <script>
+    (function() {
+      var trigger = document.getElementById('cert-trigger');
+      var modal = document.getElementById('cert-modal');
+      function open() { modal.classList.add('is-open'); }
+      function close() { modal.classList.remove('is-open'); }
+      trigger.addEventListener('click', open);
+      modal.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+    })();
   </script>
 </body>
 </html>
