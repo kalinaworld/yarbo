@@ -993,6 +993,9 @@ body { background: #0C1509; color: #F0F0EE; }
 .stat-number { color: #6B9955; }
 .stat-label { color: #6B8068; }
 .about-divider { background: #1A2810; }
+.repair-cert { background: #131D0E; border-left-color: #F5C518; }
+.repair-cert-text strong { color: #F0F0EE; }
+.repair-cert-text span { color: #A8B8A8; }
 
 /* Products */
 .products { background: #0C1509; }
