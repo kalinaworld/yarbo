@@ -224,7 +224,7 @@
   </script>
 
   <!-- Certificate modal -->
-  <div id="cert-modal" class="cert-modal" role="dialog" aria-modal="true" aria-label="Authorization certificate">
+  <div id="cert-modal" class="cert-modal" hidden role="dialog" aria-modal="true" aria-label="Authorization certificate">
     <div class="cert-modal-backdrop"></div>
     <img src="images/authorizedrepair.png" alt="Yarbo Authorized Repair Provider certificate for Monteleone Gardens" class="cert-modal-img" />
   </div>
@@ -233,8 +233,8 @@
     (function() {
       var trigger = document.getElementById('cert-trigger');
       var modal = document.getElementById('cert-modal');
-      function open() { modal.classList.add('is-open'); }
-      function close() { modal.classList.remove('is-open'); }
+      function open() { modal.removeAttribute('hidden'); modal.classList.add('is-open'); }
+      function close() { modal.classList.remove('is-open'); modal.setAttribute('hidden', ''); }
       trigger.addEventListener('click', open);
       modal.addEventListener('click', close);
       document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
