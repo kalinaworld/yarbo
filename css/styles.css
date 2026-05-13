@@ -824,6 +824,7 @@ img { display: block; max-width: 100%; }
 }
 
 .gallery-item--square { aspect-ratio: 1/1; }
+.gallery-item--square video { object-position: center 75%; }
 
 .gallery-cta {
   margin-top: 2.5rem;
