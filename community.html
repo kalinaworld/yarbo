@@ -118,6 +118,11 @@
       color: var(--text-light);
       margin-top: 0.15rem;
     }
+    .owner-card-yarbo-name {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
     .owner-card-dealer-badge {
       font-size: 0.72rem;
       font-weight: 700;
@@ -215,6 +220,7 @@
 
         <div class="owner-card">
           <div class="owner-card-name">Frank M.</div>
+          <div class="owner-card-yarbo-name">🤖 Skippy</div>
           <div class="owner-card-model">Snow Blower + Mower Pro</div>
           <div class="owner-card-town">📍 Eldred, NY</div>
           <div class="owner-card-dealer-badge">Local Dealer</div>
@@ -233,9 +239,10 @@
         </div>
 
         <div class="owner-card">
-          <div class="owner-card-name">Barryville Owner</div>
-          <div class="owner-card-model">Yarbo S1</div>
-          <div class="owner-card-town">📍 Barryville, NY</div>
+          <div class="owner-card-name">Eldred Owner</div>
+          <div class="owner-card-yarbo-name">🤖 Fern</div>
+          <div class="owner-card-model">Snow Blower + Leaf Blower + Pro Mower + Trimmer</div>
+          <div class="owner-card-town">📍 Eldred, NY</div>
         </div>
 
         <div class="owner-card">
@@ -246,6 +253,7 @@
 
         <div class="owner-card">
           <div class="owner-card-name">Glen Spey Owner</div>
+          <div class="owner-card-yarbo-name">🤖 Rodney</div>
           <div class="owner-card-model">Yarbo S1</div>
           <div class="owner-card-town">📍 Glen Spey, NY</div>
         </div>
@@ -319,6 +327,7 @@
       {
         lat: 41.503, lon: -74.865,
         name: 'Frank M.',
+        yarboName: 'Skippy',
         model: 'Snow Blower + Mower Pro',
         town: 'Eldred, NY',
         isDealer: true
@@ -338,10 +347,11 @@
         isDealer: false
       },
       {
-        lat: 41.493, lon: -74.900,
-        name: 'Barryville Owner',
-        model: 'Yarbo S1',
-        town: 'Barryville, NY',
+        lat: 41.497, lon: -74.870,
+        name: 'Eldred Owner',
+        yarboName: 'Fern',
+        model: 'Snow Blower + Leaf Blower + Pro Mower + Trimmer',
+        town: 'Eldred, NY',
         isDealer: false
       },
       {
@@ -354,6 +364,7 @@
       {
         lat: 41.477, lon: -74.779,
         name: 'Glen Spey Owner',
+        yarboName: 'Rodney',
         model: 'Yarbo S1',
         town: 'Glen Spey, NY',
         isDealer: false
@@ -365,6 +376,7 @@
       marker.bindPopup(`
         <div class="yarbo-popup">
           <div class="yarbo-popup-name">${o.name}</div>
+          ${o.yarboName ? `<div style="font-size:0.8rem;font-style:italic;color:#555;margin-bottom:2px;">🤖 ${o.yarboName}</div>` : ''}
           <div class="yarbo-popup-model">${o.model}</div>
           <div class="yarbo-popup-town">📍 ${o.town}</div>
           ${o.isDealer ? '<div class="yarbo-popup-dealer">⭐ Local Dealer</div>' : ''}
